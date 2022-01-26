@@ -68,8 +68,7 @@
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <img :src="form.photo" style="height: 40px; width: 40px;">
-
+                                                <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
                                             </div>
                                         </div>
                                     </div>

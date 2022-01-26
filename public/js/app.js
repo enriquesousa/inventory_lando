@@ -2751,6 +2751,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_created$data$created = {
   created: function created() {
     if (!User.loggedIn()) {
@@ -3461,7 +3469,6 @@ var _created$data$created;
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//
 //
 //
 //
@@ -48389,6 +48396,10 @@ var render = function () {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "name" } }, [
+                              _vm._v("Nombre"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48401,7 +48412,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                id: "exampleInputFirstName",
+                                id: "name",
                                 placeholder: "Entre Nombre",
                               },
                               domProps: { value: _vm.form.name },
@@ -48429,6 +48440,10 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "email" } }, [
+                              _vm._v("Correo Electrónico"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48441,7 +48456,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "email",
-                                id: "exampleInputFirstName",
+                                id: "email",
                                 placeholder: "Entre Email",
                               },
                               domProps: { value: _vm.form.email },
@@ -48473,6 +48488,10 @@ var render = function () {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "dir" } }, [
+                              _vm._v("Dirección"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48485,7 +48504,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                id: "exampleInputFirstName",
+                                id: "dir",
                                 placeholder: "Entre Dirección",
                               },
                               domProps: { value: _vm.form.address },
@@ -48513,6 +48532,10 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "salario" } }, [
+                              _vm._v("Salario"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48525,7 +48548,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                id: "exampleInputFirstName",
+                                id: "salario",
                                 placeholder: "Entre Salario",
                               },
                               domProps: { value: _vm.form.salary },
@@ -48557,6 +48580,10 @@ var render = function () {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "finicio" } }, [
+                              _vm._v("Fecha de Inicio"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48569,7 +48596,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "date",
-                                id: "exampleInputFirstName",
+                                id: "finicio",
                                 placeholder: "Entre Fecha de Inicio",
                               },
                               domProps: { value: _vm.form.joining_date },
@@ -48599,6 +48626,10 @@ var render = function () {
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "nid" } }, [
+                              _vm._v("Identificación"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48611,7 +48642,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                id: "exampleInputFirstName",
+                                id: "nid",
                                 placeholder: "Entre Nid",
                               },
                               domProps: { value: _vm.form.nid },
@@ -48637,6 +48668,10 @@ var render = function () {
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
+                            _c("label", { attrs: { for: "phone" } }, [
+                              _vm._v("Teléfono"),
+                            ]),
+                            _vm._v(" "),
                             _c("input", {
                               directives: [
                                 {
@@ -48649,7 +48684,7 @@ var render = function () {
                               staticClass: "form-control",
                               attrs: {
                                 type: "text",
-                                id: "exampleInputFirstName",
+                                id: "phone",
                                 placeholder: "Entre Teléfono",
                               },
                               domProps: { value: _vm.form.phone },
@@ -48679,6 +48714,8 @@ var render = function () {
                           _c("div", { staticClass: "col-md-6" }),
                         ]),
                       ]),
+                      _vm._v(" "),
+                      _c("div", [_vm._v("Imagen")]),
                       _vm._v(" "),
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "form-row" }, [
@@ -48710,7 +48747,7 @@ var render = function () {
                           _c("div", { staticClass: "col-md-6" }, [
                             _c("img", {
                               staticStyle: { height: "40px", width: "40px" },
-                              attrs: { src: _vm.form.photo },
+                              attrs: { src: "/" + _vm.form.photo },
                             }),
                           ]),
                         ]),
@@ -48747,7 +48784,7 @@ var staticRenderFns = [
       _c(
         "button",
         { staticClass: "btn btn-primary btn-block", attrs: { type: "submit" } },
-        [_vm._v("Actualizar Empleado")]
+        [_vm._v("Actualizar")]
       ),
     ])
   },
@@ -50488,7 +50525,7 @@ var render = function () {
                           _c("div", { staticClass: "col-md-6" }, [
                             _c("img", {
                               staticStyle: { height: "40px", width: "40px" },
-                              attrs: { src: _vm.form.photo },
+                              attrs: { src: "/" + _vm.form.photo },
                             }),
                           ]),
                         ]),
