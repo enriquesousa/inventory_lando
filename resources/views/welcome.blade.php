@@ -316,7 +316,7 @@
                                     <img class="img-profile rounded-circle" src="{{ asset('backend/img/boy.png') }}"
                                         style="max-width: 60px">
                                     {{-- <router-link to="/logout" class="ml-2 d-none d-lg-inline text-white small">Logout</router-link> --}}
-                                    <span class="ml-2 d-none d-lg-inline text-white small">Enrique</span>
+                                    {{-- <span class="ml-2 d-none d-lg-inline text-white small">Enrique</span> --}}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
@@ -364,7 +364,10 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
     <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+    {{-- Esta 3er linea backend/vendor/bootstrap/js/bootstrap.bundle.min.js la comento para que funcione el dropdown --}}
+    {{-- <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script> --}}
+    
     <script src="{{ asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('backend/js/ruang-admin.min.js') }}"></script>
     <script src="{{ asset('backend/vendor/chart.js/Chart.min.js') }}"></script>

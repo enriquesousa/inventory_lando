@@ -100,7 +100,7 @@ methods:{
             if (result.isConfirmed) {
                 axios.delete('/api/employee/'+id)
                 .then(() => {
-                    this.employee = this.employees.filter(employee => {
+                    this.employees = this.employees.filter(employee => {
                         return employee.id != id
                     })
                 })

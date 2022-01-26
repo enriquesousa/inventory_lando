@@ -14,7 +14,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Añadir Proveedor</h1>
                                 </div>
 
-                                <form class="user" @submit.prevent="employeeInsert" enctype="multipart/form-data">
+                                <form class="user" @submit.prevent="supplierInsert" enctype="multipart/form-data">
 
                                     <div class="form-group">
                                         <div class="form-row">
@@ -122,10 +122,10 @@
                 reader.readAsDataURL(file);
             }
         },     
-        employeeInsert(){
-            axios.post('/api/employee',this.form)
+        supplierInsert(){
+            axios.post('/api/supplier',this.form)
             .then(() => {
-                this.$router.push({ name: 'employee'})
+                this.$router.push({ name: 'supplier'})
                 Notification.success()
             })
             .catch(error => this.errors = error.response.data.errors)
