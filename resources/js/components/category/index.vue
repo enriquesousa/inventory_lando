@@ -30,7 +30,7 @@
                                 <td>{{ category.category_name }}</td>
                                 <td>
                                     <router-link :to="{name: 'edit-category', params:{id:category.id}}" class="btn btn-sm btn-primary">Editar</router-link>
-                                    <a @click="deleteCatagory(catagory.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Eliminar</font></a>
+                                    <a @click="deleteCategory(category.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Eliminar</font></a>
                                 </td>
                             </tr>
                         </tbody>
@@ -77,7 +77,7 @@ methods:{
         .catch()
     },
 
-    deleteSupplier(id){
+    deleteCategory(id){
         Swal.fire({
         title: 'Estas Seguro?',
         text: "No podrás revertir!",
@@ -88,14 +88,14 @@ methods:{
         confirmButtonText: 'Si, Eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete('/api/supplier/'+id)
+                axios.delete('/api/category/'+id)
                 .then(() => {
-                    this.suppliers = this.suppliers.filter(supplier => {
-                        return supplier.id != id
+                    this.categories = this.categories.filter(category => {
+                        return category.id != id
                     })
                 })
                 .catch(() => {
-                    this.$router.push({name: 'supplier'})
+                    this.$router.push({name: 'category'})
                 })
                 location.reload()
                 Swal.fire(
