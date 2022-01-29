@@ -15,7 +15,9 @@
                                 </div>
 
                                 <form class="user" @submit.prevent="supplierUpdate" enctype="multipart/form-data">
+                                <!-- <form method="POST" enctype="multipart/form-data"> -->
 
+                                    <!-- Input Nombre y Correo            -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -31,6 +33,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Input Dirección y NombreEmpresa -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -46,6 +49,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Input Phone -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -63,13 +67,18 @@
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="file" class="custom-file-input" id="customFile" @change="onFileSelected">
-                                                <small class="text-danger" v-if="errors.photo"> {{ errors.photo[0] }} </small>
-                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="customFile" @change="onFileSelected">
+                                                    <small class="text-danger" v-if="errors.photo"> {{ errors.photo[0] }} </small>
+                                                    <label class="custom-file-label" for="customFile">Choose file</label>
+                                                </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
                                             </div>
+                                            <!-- <div v-if="form.imgpreview" class="">
+                                                <img :src="form.imgpreview" style="height: 40px; width: 40px;">
+                                            </div> -->
                                         </div>
                                     </div>
 
@@ -107,9 +116,11 @@
             address: '',
             photo: '',
             newphoto: '',
+            // imgpreview: '',
+            // image: '',
         },
         errors:{
-        },
+        }
       }
     },
 
@@ -123,14 +134,20 @@
     methods:{
         onFileSelected(event){
             let file = event.target.files[0];
+            // this.form.image = event.target.files[0];
+            // console.log(file);
+            // console.log(this.form.image);
             if (file.size > 1048770){
                 Notification.image_validation();
             }else{
                 let reader = new FileReader();
+                // reader.readAsDataURL(this.form.image);
                 reader.onload = event => {
-                    this.form.newphoto = event.target.result
+                    // this.form.imgpreview = event.target.result;
+                    this.form.newphoto = event.target.result;
                 }
                 reader.readAsDataURL(file);
+                
             }
         },     
         supplierUpdate(){
