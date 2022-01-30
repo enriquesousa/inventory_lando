@@ -14,7 +14,7 @@
                                     <h1 class="h4 text-gray-900 mb-4">Añadir Producto</h1>
                                 </div>
 
-                                <form class="user" @submit.prevent="employeeInsert" enctype="multipart/form-data">
+                                <form class="user" @submit.prevent="productInsert" enctype="multipart/form-data">
 
                                     <!-- Nombre y Código -->
                                     <div class="form-group">
@@ -36,23 +36,15 @@
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label for="exampleFormControlSelect1">Categoría</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
+                                                <label for="SCat">Categoría</label>
+                                                <select class="form-control" id="SCat" v-model="form.category_id">
+                                                    <option v-for="category in categories" :value="category.id">{{ category.category_name }}</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="exampleFormControlSelect1">Proveedor</label>
-                                                <select class="form-control" id="exampleFormControlSelect1">
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                    <option>4</option>
-                                                    <option>5</option>
+                                                <label for="SProd">Proveedor</label>
+                                                <select class="form-control" id="SProd" v-model="form.supplier_id">
+                                                    <option v-for="supplier in suppliers" :value="supplier.id">{{ supplier.name }}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -127,32 +119,36 @@
 </template>
 
 <script type="text/javascript">
-  export default {
+export default {
+    
     created(){
-      if (!User.loggedIn()){
+        if (!User.loggedIn()){
         this.$router.push({ name: 'home'})
-      }
+        }
     },
 
     data(){
-      return {
+        return {
         form:{
-          name: null,
-          email: null,
-          phone: null,
-          salary: null,
-          address: null,
-          photo: null,
-          nid: null,
-          joining_date: null,
+            product_name: null,
+            product_code: null,
+            category_id: null,
+            supplier_id: null,
+            root: null,
+            buying_price: null,
+            selling_price: null,
+            buying_date: null,
+            image: null,
+            product_quantity: null,
         },
-        errors:{
-
+        errors:{},
+        categories:{},
+        suppliers:{},
         }
-      }
     },
 
     methods:{
+
         onFileSelected(event){
             let file = event.target.files[0];
             if (file.size > 1048770){
@@ -160,23 +156,34 @@
             }else{
                 let reader = new FileReader();
                 reader.onload = event => {
-                    this.form.photo = event.target.result;
+                    this.form.image = event.target.result;
                     console.log(event.target.result);
                 }
                 reader.readAsDataURL(file);
             }
         },     
-        employeeInsert(){
-            axios.post('/api/employee',this.form)
+
+        productInsert(){
+            axios.post('/api/product',this.form)
             .then(() => {
-                this.$router.push({ name: 'employee'})
+                this.$router.push({ name: 'product'})
                 Notification.success()
             })
             .catch(error => this.errors = error.response.data.errors)
         },
-    }
-    
-  }
+
+    },
+
+    // Cuando este componente se cargue, cargara los datos de Categorias y Proveedores
+    created(){
+        axios.get('/api/category/')
+        .then(({data}) => (this.categories = data))
+
+        axios.get('/api/supplier/')
+        .then(({data}) => (this.suppliers = data))
+    },
+
+}
 </script>
 
 <style>
