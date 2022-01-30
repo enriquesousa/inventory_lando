@@ -82,7 +82,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary btn-block">Añadir Empleado</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Añadir</button>
                                     </div>
 
                                 </form>
