@@ -16,6 +16,7 @@
 
                                 <form class="user" @submit.prevent="employeeUpdate" enctype="multipart/form-data">
 
+                                    <!-- Nombre y Correo -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -31,6 +32,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Dirección y Salario -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -46,6 +48,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Fecha inicio, y Numero de Identificación -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -61,6 +64,7 @@
                                         </div>
                                     </div>
 
+                                    <!-- Teléfono -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">

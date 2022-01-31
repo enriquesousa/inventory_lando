@@ -172,6 +172,7 @@
             <!-- Sidebar -->
             
             <div id="content-wrapper" class="d-flex flex-column">
+
                 <div id="content">
 
                     <!-- TopBar -->
@@ -383,7 +384,20 @@
 
                 </div>
 
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+                        <b><a href="https://www.easylearningbd.com/" target="_blank">Easy Learning</a></b>
+                        </span>
+                    </div>
+                    </div>
+                </footer>
+                <!-- Footer -->
+
             </div>
+
         </div>
     </div>
 
