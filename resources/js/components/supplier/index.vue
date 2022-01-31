@@ -39,7 +39,7 @@
                                 <td>{{ supplier.email }}</td>
                                 <td>
                                     <router-link :to="{name: 'edit-supplier', params:{id:supplier.id}}" class="btn btn-sm btn-primary">Editar</router-link>
-                                    <a @click="deleteSupplier(supplier.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Borrar</font></a>
+                                    <a @click="deleteSupplier(supplier.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Eliminar</font></a>
                                 </td>
                             </tr>
                             

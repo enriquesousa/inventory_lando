@@ -39,7 +39,7 @@
                                 <td>{{ employee.joining_date }}</td>
                                 <td>
                                     <router-link :to="{name: 'edit-employee', params:{id:employee.id}}" class="btn btn-sm btn-primary">Editar</router-link>
-                                    <a @click="deleteEmployee(employee.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Borrar</font></a>
+                                    <a @click="deleteEmployee(employee.id)" class="btn btn-sm btn-danger"><font color="#ffffff">Eliminar</font></a>
                                 </td>
                             </tr>
                             
@@ -89,13 +89,13 @@ methods:{
 
     deleteEmployee(id){
         Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
+        title: 'Estas Seguro?',
+        text: "No podrás revertir!",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Si, Eliminar!'
         }).then((result) => {
             if (result.isConfirmed) {
                 axios.delete('/api/employee/'+id)
