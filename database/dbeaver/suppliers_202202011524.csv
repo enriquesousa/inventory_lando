@@ -1,0 +1,4 @@
+"id","name","email","phone","address","photo","shopname","created_at","updated_at"
+1,Kazi ariyan,kazi.ariyan@tradeco.com,"232323","Suleman Plaza 3, Puruna Paltan",backend/supplier/1643146753.jpeg,Udemy Kazy,"2022-01-25 21:39:13","2022-01-25 21:39:13"
+3,Julio Sousa12,julio12@gfd.com,"4567989712",Cayumito #714 Las Huertas 12,backend/supplier/1643210031.jpeg,HDI 12,"2022-01-26 01:43:21","2022-01-26 01:43:21"
+4,Jorge,jorgeatlas@gmail.com,"6647891245",zona Rio,backend/supplier/1643480020.jpeg,ATLAS,"2022-01-26 02:06:57","2022-01-26 02:06:57"

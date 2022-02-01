@@ -1,0 +1,4 @@
+"id","name","email","phone","address","salary","photo","nid","joining_date","created_at","updated_at"
+4,Julio Sousa,julio@gfd.com,"435",Cayumito #714 Las Huertas,"232323",backend/employee/1643162665.jpeg,"564","2022-01-11","2022-01-26 02:04:25","2022-01-26 02:04:25"
+5,Kazi ariyan,kazi.ariyan@tradeco.com,"6641880604","Suleman Plaza 3, Puruna Paltan","5656",backend/employee/1643208645.jpeg,"65","2022-01-20","2022-01-26 02:04:54","2022-01-26 02:04:54"
+7,Ivonne Soberanis M.,ivonne@gmail.com,"6647891245","Paseo de los Heroes, Zona Rio, Tijuana","456455",backend/employee/1643480088.jpeg,"4568","2022-01-12","2022-01-26 02:05:58","2022-01-26 02:05:58"

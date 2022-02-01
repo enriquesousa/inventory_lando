@@ -1,0 +1,3 @@
+"id","category_id","product_name","product_code","root","buying_price","selling_price","supplier_id","buying_date","image","product_quantity","created_at","updated_at"
+1,1,Taladro,"1111",root11,"2001","30011",1,"2022-01-11",backend/product/1643607784.jpeg,"5011","2022-01-30 18:15:08","2022-01-30 18:15:08"
+3,2,Demo,"465778",demo,"456","500",4,"2022-01-25",backend/product/1643604632.jpeg,"50","2022-01-31 04:50:32","2022-01-31 04:50:32"
