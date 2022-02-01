@@ -1,0 +1,15 @@
+Este archivo es para branch inventory_i5
+
+Los comandos basicos son:
+Branch
+Lista los branches que hay
+- git branch --list
+Cambbiarse a un Branch
+- git checkout <branch-name>
+- git checkot inventory_i5 
+Crear un branch nuevo
+- git branch <branch-name>
+- git branch inventory_i5 
+To push the new branch into the remote repository:
+- git push -u <remote> <branch-name>
+- git push -u git@github.com:enriquesousa/inventory_lando.git inventory_i5
