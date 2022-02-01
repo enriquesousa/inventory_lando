@@ -1,2 +1,5 @@
 Branch Name: inventory_dev
-Descripcon: Aqui es para el desarrollo del sistema!
+Descripción: Aquí es para el desarrollo del sistema!
+
+31/ene/22 8:41pm
+Agregue Proyecto Base de Datos de DBeaver en /database/inventory_lando-20220131.dbp
