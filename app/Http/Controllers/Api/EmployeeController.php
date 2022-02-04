@@ -123,7 +123,9 @@ class EmployeeController extends Controller
                 $data['photo'] = $image_url;
                 $img = DB::table('employees')->where('id',$id)->first();
                 $image_path = $img->photo;
-                $done = unlink($image_path);
+                if ($image_path != 'backend/img/no-image.png') {
+                    $done = unlink($image_path);
+                }
                 $user  = DB::table('employees')->where('id',$id)->update($data);
             }
         }else{
