@@ -16,49 +16,60 @@
 
                                 <form class="user" @submit.prevent="employeeInsert" enctype="multipart/form-data">
 
+                                    <!-- Nombre y Correo -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Nombre" v-model="form.name">
+                                                <label for="name">Nombre</label>
+                                                <input type="text" class="form-control" id="name" placeholder="Entre Nombre" v-model="form.name">
                                                 <small class="text-danger" v-if="errors.name"> {{ errors.name[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="email" class="form-control" id="exampleInputFirstName" placeholder="Entre Email" v-model="form.email">
+                                                <label for="email">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Entre Email" v-model="form.email">
                                                 <small class="text-danger" v-if="errors.email"> {{ errors.email[0] }} </small>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- Dirección y Salario -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Dirección" v-model="form.address">
+                                                <label for="dir">Dirección</label>
+                                                <input type="text" class="form-control" id="dir" placeholder="Entre Dirección" v-model="form.address">
                                                 <small class="text-danger" v-if="errors.address"> {{ errors.address[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Salario" v-model="form.salary">
+                                                <label for="salario">Salario</label>
+                                                <input type="text" class="form-control" id="salario" placeholder="Entre Salario" v-model="form.salary">
                                                 <small class="text-danger" v-if="errors.salary"> {{ errors.salary[0] }} </small>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- Fecha inicio, y Numero de Identificación -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="date" class="form-control" id="exampleInputFirstName" placeholder="Entre Fecha de Inicio" v-model="form.joining_date">
+                                                <label for="finicio">Fecha de Inicio</label>
+                                                <input type="date" class="form-control" id="finicio" placeholder="Entre Fecha de Inicio" v-model="form.joining_date">
                                                 <small class="text-danger" v-if="errors.joining_date"> {{ errors.joining_date[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Nid" v-model="form.nid">
+                                                <label for="nid">Identificación</label>
+                                                <input type="text" class="form-control" id="nid" placeholder="Entre Nid" v-model="form.nid">
                                                 <small class="text-danger" v-if="errors.nid"> {{ errors.nid[0] }} </small>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- Teléfono -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Teléfono" v-model="form.phone">
+                                                <label for="phone">Teléfono</label>
+                                                <input type="text" class="form-control" id="phone" placeholder="Entre Teléfono" v-model="form.phone">
                                                 <small class="text-danger" v-if="errors.phone"> {{ errors.phone[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
@@ -67,6 +78,7 @@
                                         </div>
                                     </div>
 
+                                    <div>Imagen</div>
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -76,7 +88,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <img :src="form.photo" style="height: 40px; width: 40px;">
-
+                                                <!-- <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" /> -->
                                             </div>
                                         </div>
                                     </div>
@@ -117,13 +129,12 @@
           nid: null,
           joining_date: null,
         },
-        errors:{
-
-        }
+        errors:{},
       }
     },
 
     methods:{
+
         onFileSelected(event){
             let file = event.target.files[0];
             if (file.size > 1048770){
@@ -136,7 +147,8 @@
                 }
                 reader.readAsDataURL(file);
             }
-        },     
+        },
+
         employeeInsert(){
             axios.post('/api/employee',this.form)
             .then(() => {
@@ -145,7 +157,8 @@
             })
             .catch(error => this.errors = error.response.data.errors)
         },
-    }
+
+    },
     
   }
 </script>

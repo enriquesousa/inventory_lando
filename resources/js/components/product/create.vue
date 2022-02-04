@@ -129,21 +129,21 @@ export default {
 
     data(){
         return {
-        form:{
-            product_name: null,
-            product_code: null,
-            category_id: null,
-            supplier_id: null,
-            root: null,
-            buying_price: null,
-            selling_price: null,
-            buying_date: null,
-            image: null,
-            product_quantity: null,
-        },
-        errors:{},
-        categories:{},
-        suppliers:{},
+            form:{
+                product_name: null,
+                product_code: null,
+                category_id: null,
+                supplier_id: null,
+                root: null,
+                buying_price: null,
+                selling_price: null,
+                buying_date: null,
+                image: null,
+                product_quantity: null,
+            },
+            errors:{},
+            categories:{},
+            suppliers:{},
         }
     },
 

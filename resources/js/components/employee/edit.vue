@@ -88,7 +88,11 @@
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
+                                                <img v-if="!form.newphoto" :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
+                                                <img v-if="form.newphoto" :src="form.photo" style="height: 40px; width: 40px;" />
+
+                                                <!-- <img :src="'/'+ form.newphoto" style="height: 40px; width: 40px;" /> -->
+                                                <!-- <img :src="form.newphoto" style="height: 40px; width: 40px;" /> -->
                                             </div>
                                         </div>
                                     </div>
@@ -144,6 +148,7 @@
     },
 
     methods:{
+
         onFileSelected(event){
             let file = event.target.files[0];
             if (file.size > 1048770){
@@ -152,10 +157,13 @@
                 let reader = new FileReader();
                 reader.onload = event => {
                     this.form.newphoto = event.target.result
+                    this.form.photo = event.target.result
+                    console.log(event.target.result);
                 }
                 reader.readAsDataURL(file);
             }
         },     
+
         employeeUpdate(){
             let id = this.$route.params.id
             axios.patch('/api/employee/'+id,this.form)
@@ -165,6 +173,7 @@
             })
             .catch(error =>this.errors = error.response.data.errors)
         },
+
     }
     
   }

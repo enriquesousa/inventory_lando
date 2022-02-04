@@ -33,6 +33,7 @@ class EmployeeController extends Controller
             'name' => 'required|unique:employees|max:255',
             'email' => 'required',
             'phone' => 'required|unique:employees',
+            // 'photo' => 'required',
         ]);
 
         if ($request->photo) {
@@ -41,7 +42,7 @@ class EmployeeController extends Controller
             $ext = explode('/', $sub)[1];
             $name = time().".".$ext;
             $img = Image::make($request->photo)->resize(240,200);
-            $upload_path = 'backend/employee/';
+            $upload_path = 'backend/imagenes/employee/';
             $image_url = $upload_path.$name;
             $img->save($image_url);
 
@@ -65,6 +66,12 @@ class EmployeeController extends Controller
             $employee->address = $request->address;
             $employee->nid = $request->nid;
             $employee->joining_date = $request->joining_date;
+
+            // Para que tenga una foto que diga NO-IMAGEN
+            $name = "no-image.png";
+            $upload_path = 'backend/img/';
+            $image_url = $upload_path.$name;
+            $employee->photo = $image_url;
 
             $employee->save();
         }
@@ -108,7 +115,7 @@ class EmployeeController extends Controller
 
             $name = time().".".$ext;
             $img = Image::make($image)->resize(240,200);
-            $upload_path = 'backend/employee/';
+            $upload_path = 'backend/imagenes/employee/';
             $image_url = $upload_path.$name;
             $success = $img->save($image_url);
             
@@ -136,10 +143,11 @@ class EmployeeController extends Controller
     {
         $employee = DB::table('employees')->where('id', $id)->first();
         $photo = $employee->photo;
-        if ($photo) {
+        if ($photo != 'backend/img/no-image.png') {
             unlink($photo);
             DB::table('employees')->where('id', $id)->delete();
         }else{
+            // No eliminar la foto del disk backend/img/no-image.png
             DB::table('employees')->where('id', $id)->delete();
         }
     }

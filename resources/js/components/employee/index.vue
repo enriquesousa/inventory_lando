@@ -1,13 +1,20 @@
 <template>
 <div>
 
-    <div>
+    <div class="row py-3">
+        <!-- <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link> -->
+        <!-- <a class="btn btn-default btn-work" href=""><input type="button" class="btn btn-default btn-work" value="Check my work"/></a> -->
         <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link>
+
+        <div class="col-sm-2 pull-right">
+            <input type="text" v-model="searchTerm" class="form-control mb-0" style="width: 300px;" placeholder="Buscar aquí">
+       </div>
     </div>
-    <br>
-    <div align="right">
+
+    <!-- <br> -->
+    <!-- <div align="right">
         <input type="text" v-model="searchTerm" class="form-control mb-2" style="width: 300px;" placeholder="Buscar aquí">
-    </div>
+    </div> -->
 
     <!-- Begin Row Simple Table -->
     <div class="row">
