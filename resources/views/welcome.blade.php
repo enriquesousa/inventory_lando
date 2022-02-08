@@ -77,7 +77,7 @@
                         </div>
                     </li>
 
-                    {{-- Categorys --}}
+                    {{-- Categories --}}
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
                             aria-expanded="true" aria-controls="collapseBootstrap2">
@@ -93,7 +93,7 @@
                         </div>
                     </li>
 
-                    {{-- Productos --}}
+                    {{-- Products --}}
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap3"
                             aria-expanded="true" aria-controls="collapseBootstrap3">
@@ -109,13 +109,34 @@
                         </div>
                     </li>
 
+                    {{-- Expenses --}}
+                    <li class="nav-item">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap4"
+                            aria-expanded="true" aria-controls="collapseBootstrap4">
+                            <i class="far fa-fw fa-window-maximize"></i>
+                            <span>Gastos</span>
+                        </a>
+                        <div id="collapseBootstrap4" class="collapse" aria-labelledby="headingBootstrap"
+                            data-parent="#accordionSidebar">
+                            <div class="bg-white py-2 collapse-inner rounded">
+                                <router-link class="collapse-item" to="/store-expense">Añadir Gasto</router-link>
+                                <router-link class="collapse-item" to="/expense">Lista de Gastos</router-link>
+                            </div>
+                        </div>
+                    </li>
 
+
+
+
+                    {{-- Forms --}}
                     <li class="nav-item">
                         <a class="nav-link" href="forms.html">
                             <i class="fab fa-fw fa-wpforms"></i>
                             <span>Forms</span>
                         </a>
                     </li>
+
+                    {{-- Tables --}}
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable"
                             aria-expanded="true" aria-controls="collapseTable">
@@ -131,16 +152,23 @@
                             </div>
                         </div>
                     </li>
+
+                    {{-- UI Colors --}}
                     <li class="nav-item">
                         <a class="nav-link" href="ui-colors.html">
                             <i class="fas fa-fw fa-palette"></i>
                             <span>UI Colors</span>
                         </a>
                     </li>
+
                     <hr class="sidebar-divider">
+
+                    {{-- Example sidebar-heading --}}
                     <div class="sidebar-heading">
                         Examples
                     </div>
+
+                    {{-- Pages --}}
                     <li class="nav-item">
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage"
                             aria-expanded="true" aria-controls="collapsePage">
@@ -158,14 +186,18 @@
                             </div>
                         </div>
                     </li>
+
+                    {{-- Charts --}}
                     <li class="nav-item">
                         <a class="nav-link" href="charts.html">
                             <i class="fas fa-fw fa-chart-area"></i>
                             <span>Charts</span>
                         </a>
                     </li>
+
                     <hr class="sidebar-divider">
-                    <div class="version" id="version-ruangadmin"></div>
+                    <div class="version" id="version-ruangadmin">Version 1.0</div>
+
                 </ul>
                 <!-- Sidebar -->
             </nav>
