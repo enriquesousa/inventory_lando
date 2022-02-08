@@ -96,8 +96,9 @@
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <img :src="'/'+ form.image" style="height: 40px; width: 40px;">
-
+                                                <!-- <img :src="'/'+ form.image" style="height: 40px; width: 40px;"> -->
+                                                <img v-if="!form.newimage" :src="'/'+ form.image" style="height: 40px; width: 40px;" />
+                                                <img v-if="form.newimage" :src="form.image" style="height: 40px; width: 40px;" />
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +172,10 @@
             }else{
                 let reader = new FileReader();
                 reader.onload = event => {
+                    // this.form.newimage = event.target.result
                     this.form.newimage = event.target.result
+                    this.form.image = event.target.result
+                    console.log(event.target.result);
                 }
                 reader.readAsDataURL(file);
             }

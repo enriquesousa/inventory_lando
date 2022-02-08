@@ -81,6 +81,12 @@ class ProductController extends Controller
             $product->buying_date = $request->buying_date;
             $product->product_quantity = $request->product_quantity;
             
+            // Para que tenga una foto que diga NO-IMAGEN
+            $name = "no-image.png";
+            $upload_path = 'backend/img/';
+            $image_url = $upload_path.$name;
+            $product->image = $image_url;
+
             $product->save(); 
         } 
 
@@ -134,7 +140,9 @@ class ProductController extends Controller
             $data['image'] = $image_url;
             $img = DB::table('products')->where('id',$id)->first();
             $image_path = $img->image;
-            $done = unlink($image_path);
+            if ($image_path != 'backend/img/no-image.png') {
+                $done = unlink($image_path);
+            }
             $user  = DB::table('products')->where('id',$id)->update($data);
          }
           

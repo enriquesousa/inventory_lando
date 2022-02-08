@@ -36,13 +36,13 @@
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label for="dir">Dirección</label>
-                                                <input type="text" class="form-control" id="dir" placeholder="Entre Dirección" v-model="form.address">
+                                                <label for="address1">Dirección</label>
+                                                <input type="text" class="form-control" id="address1" placeholder="Entre Dirección" v-model="form.address">
                                                 <small class="text-danger" v-if="errors.address"> {{ errors.address[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="salario">Salario</label>
-                                                <input type="text" class="form-control" id="salario" placeholder="Entre Salario" v-model="form.salary">
+                                                <label for="price">Salario</label>
+                                                <input type="text" class="form-control" id="price" placeholder="Entre Salario" v-model="form.salary">
                                                 <small class="text-danger" v-if="errors.salary"> {{ errors.salary[0] }} </small>
                                             </div>
                                         </div>
@@ -52,13 +52,13 @@
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label for="finicio">Fecha de Inicio</label>
-                                                <input type="date" class="form-control" id="finicio" placeholder="Entre Fecha de Inicio" v-model="form.joining_date">
+                                                <label for="date">Fecha de Inicio</label>
+                                                <input type="date" class="form-control" id="date" placeholder="Entre Fecha de Inicio" v-model="form.joining_date">
                                                 <small class="text-danger" v-if="errors.joining_date"> {{ errors.joining_date[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="nid">Identificación</label>
-                                                <input type="text" class="form-control" id="nid" placeholder="Entre Nid" v-model="form.nid">
+                                                <label for="price_nid">Identificación</label>
+                                                <input type="text" class="form-control" id="price_nid" placeholder="Entre Nid" v-model="form.nid">
                                                 <small class="text-danger" v-if="errors.nid"> {{ errors.nid[0] }} </small>
                                             </div>
                                         </div>

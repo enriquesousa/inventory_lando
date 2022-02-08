@@ -1,19 +1,25 @@
 <template>
 <div>
 
-    <div class="row py-3">
-        <!-- <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link> -->
-        <!-- <a class="btn btn-default btn-work" href=""><input type="button" class="btn btn-default btn-work" value="Check my work"/></a> -->
-        <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link>
+    <div class="row py-1">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand">
+                    <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link>
+                </a>
+                <form class="d-flex">
+                    <input type="text" v-model="searchTerm" class="form-control mb-0" style="width: 300px;" aria-label="Search" placeholder="Buscar aquí">
+                    <button class="btn btn-outline-success" type="submit">Reset</button>
+                </form>
+            </div>
+        </nav>
+    </div>
 
+    <!-- <div class="row py-3">
+        <router-link to="/store-employee" class="btn btn-primary">Añadir Empleado</router-link>
         <div class="col-sm-2 pull-right">
             <input type="text" v-model="searchTerm" class="form-control mb-0" style="width: 300px;" placeholder="Buscar aquí">
        </div>
-    </div>
-
-    <!-- <br> -->
-    <!-- <div align="right">
-        <input type="text" v-model="searchTerm" class="form-control mb-2" style="width: 300px;" placeholder="Buscar aquí">
     </div> -->
 
     <!-- Begin Row Simple Table -->

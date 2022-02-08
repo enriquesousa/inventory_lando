@@ -16,36 +16,44 @@
 
                                 <form class="user" @submit.prevent="supplierInsert" enctype="multipart/form-data">
 
+                                    <!-- Nombre y Correo -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Nombre" v-model="form.name">
+                                                <label for="name_nombre">Nombre</label>
+                                                <input type="text" class="form-control" id="name_nombre" placeholder="Entre Nombre" v-model="form.name">
                                                 <small class="text-danger" v-if="errors.name"> {{ errors.name[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="email" class="form-control" id="exampleInputFirstName" placeholder="Entre Email" v-model="form.email">
+                                                <label for="email_dir">Correo Electrónico</label>
+                                                <input type="email" class="form-control" id="email_dir" placeholder="Entre Email" v-model="form.email">
                                                 <small class="text-danger" v-if="errors.email"> {{ errors.email[0] }} </small>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- Direccion y Compañia -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Dirección" v-model="form.address">
+                                                <label for="address1">Dirección</label>
+                                                <input type="text" class="form-control" id="address1" placeholder="Entre Dirección" v-model="form.address">
                                                 <small class="text-danger" v-if="errors.address"> {{ errors.address[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Su Nombre de Tienda" v-model="form.shopname">
+                                                <label for="company_name">Empresa</label>
+                                                <input type="text" class="form-control" id="company_name" placeholder="Entre Su Nombre de Tienda" v-model="form.shopname">
                                                 <small class="text-danger" v-if="errors.shopname"> {{ errors.shopname[0] }} </small>
                                             </div>
                                         </div>
                                     </div>
 
+                                    <!-- Telefono -->
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="exampleInputFirstName" placeholder="Entre Teléfono" v-model="form.phone">
+                                                <label for="phone_tel">Teléfono</label>
+                                                <input type="text" class="form-control" id="phone_tel" placeholder="Entre Teléfono" v-model="form.phone">
                                                 <small class="text-danger" v-if="errors.phone"> {{ errors.phone[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
@@ -54,6 +62,8 @@
                                         </div>
                                     </div>
 
+                                    <!-- Imagen -->
+                                    <div>Imagen</div>
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
@@ -63,7 +73,6 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <img :src="form.photo" style="height: 40px; width: 40px;">
-
                                             </div>
                                         </div>
                                     </div>
@@ -102,13 +111,12 @@
           address: null,
           photo: null,
         },
-        errors:{
-
-        }
+        errors:{},
       }
     },
 
     methods:{
+
         onFileSelected(event){
             let file = event.target.files[0];
             if (file.size > 1048770){
@@ -121,7 +129,8 @@
                 }
                 reader.readAsDataURL(file);
             }
-        },     
+        },  
+
         supplierInsert(){
             axios.post('/api/supplier',this.form)
             .then(() => {

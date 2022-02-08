@@ -123,6 +123,7 @@ class EmployeeController extends Controller
                 $data['photo'] = $image_url;
                 $img = DB::table('employees')->where('id',$id)->first();
                 $image_path = $img->photo;
+                // Para que No borre NO-IMAGEN del disco
                 if ($image_path != 'backend/img/no-image.png') {
                     $done = unlink($image_path);
                 }

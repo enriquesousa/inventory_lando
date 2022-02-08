@@ -90,7 +90,6 @@
                                             <div class="col-md-6">
                                                 <img v-if="!form.newphoto" :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
                                                 <img v-if="form.newphoto" :src="form.photo" style="height: 40px; width: 40px;" />
-
                                                 <!-- <img :src="'/'+ form.newphoto" style="height: 40px; width: 40px;" /> -->
                                                 <!-- <img :src="form.newphoto" style="height: 40px; width: 40px;" /> -->
                                             </div>

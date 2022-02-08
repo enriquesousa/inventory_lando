@@ -41,6 +41,7 @@ class SupplierController extends Controller
             $supplier->shopname = $request->shopname;
             $supplier->address = $request->address;
             $supplier->photo = $image_url;
+
             $supplier->save();
         }else{
             $supplier = new Supplier();
@@ -49,6 +50,13 @@ class SupplierController extends Controller
             $supplier->phone = $request->phone;
             $supplier->shopname = $request->shopname;
             $supplier->address = $request->address;
+
+            // Para que tenga una foto que diga NO-IMAGEN
+            $name = "no-image.png";
+            $upload_path = 'backend/img/';
+            $image_url = $upload_path.$name;
+            $supplier->photo = $image_url;
+
             $supplier->save();
         }
 
@@ -90,7 +98,10 @@ class SupplierController extends Controller
                 $data['photo'] = $image_url;
                 $img = DB::table('suppliers')->where('id',$id)->first();
                 $image_path = $img->photo;
-                $done = unlink($image_path);
+                 // Para que No borre NO-IMAGEN del disco
+                 if ($image_path != 'backend/img/no-image.png') {
+                    $done = unlink($image_path);
+                }
                 $user = DB::table('suppliers')->where('id',$id)->update($data);
             }
         }else{

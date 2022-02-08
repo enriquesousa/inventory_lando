@@ -74,7 +74,9 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
+                                                <!-- <img :src="'/'+ form.photo" style="height: 40px; width: 40px;" /> -->
+                                                <img v-if="!form.newphoto" :src="'/'+ form.photo" style="height: 40px; width: 40px;" />
+                                                <img v-if="form.newphoto" :src="form.photo" style="height: 40px; width: 40px;" />
                                             </div>
                                             <!-- <div v-if="form.imgpreview" class="">
                                                 <img :src="form.imgpreview" style="height: 40px; width: 40px;">
@@ -132,24 +134,22 @@
     },
 
     methods:{
+        
         onFileSelected(event){
             let file = event.target.files[0];
-            // this.form.image = event.target.files[0];
-            // console.log(file);
-            // console.log(this.form.image);
             if (file.size > 1048770){
                 Notification.image_validation();
             }else{
                 let reader = new FileReader();
-                // reader.readAsDataURL(this.form.image);
                 reader.onload = event => {
-                    // this.form.imgpreview = event.target.result;
-                    this.form.newphoto = event.target.result;
+                    this.form.newphoto = event.target.result
+                    this.form.photo = event.target.result
+                    console.log(event.target.result);
                 }
                 reader.readAsDataURL(file);
-                
             }
-        },     
+        },
+
         supplierUpdate(){
             let id = this.$route.params.id
             axios.patch('/api/supplier/'+id,this.form)

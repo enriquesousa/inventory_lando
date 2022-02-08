@@ -25,8 +25,8 @@
                                                 <small class="text-danger" v-if="errors.product_name"> {{ errors.product_name[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="pcodigo">Código</label>
-                                                <input type="text" class="form-control" id="pcodigo" placeholder="Entre Código Producto" v-model="form.product_code">
+                                                <label for="number_pcodigo">Código</label>
+                                                <input type="text" class="form-control" id="number_pcodigo" placeholder="Entre Código Producto" v-model="form.product_code">
                                                 <small class="text-danger" v-if="errors.product_code"> {{ errors.product_code[0] }} </small>
                                             </div>
                                         </div>
@@ -59,13 +59,13 @@
                                                 <small class="text-danger" v-if="errors.root"> {{ errors.root[0] }} </small>
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="pcompra">Precio de Compra</label>
-                                                <input type="text" class="form-control" id="pcompra" placeholder="" v-model="form.buying_price">
+                                                <label for="price_pcompra">Precio de Compra</label>
+                                                <input type="text" class="form-control" id="price_pcompra" placeholder="" v-model="form.buying_price">
                                                 <small class="text-danger" v-if="errors.buying_price"> {{ errors.buying_price[0] }} </small>
                                             </div>
                                             <div class="col-md-4">
-                                                <label for="pventa">Precio de Venta</label>
-                                                <input type="text" class="form-control" id="pventa" placeholder="" v-model="form.selling_price">
+                                                <label for="price_pventa">Precio de Venta</label>
+                                                <input type="text" class="form-control" id="price_pventa" placeholder="" v-model="form.selling_price">
                                                 <small class="text-danger" v-if="errors.selling_price"> {{ errors.selling_price[0] }} </small>
                                             </div>
                                         </div>
@@ -75,13 +75,13 @@
                                     <div class="form-group">
                                         <div class="form-row">
                                             <div class="col-md-6">
-                                                <label for="fcompra">Fecha de Compra</label>
-                                                <input type="date" class="form-control" id="fcompra" placeholder="" v-model="form.buying_date">
+                                                <label for="date_fcompra">Fecha de Compra</label>
+                                                <input type="date" class="form-control" id="date_fcompra" placeholder="" v-model="form.buying_date">
                                                 <small class="text-danger" v-if="errors.buying_date"> {{ errors.buying_date[0] }} </small>
                                             </div>
                                             <div class="col-md-6">
-                                                <label for="pcantidad">Cantidad Producto</label>
-                                                <input type="text" class="form-control" id="pcantidad" placeholder="Entre Cantidad" v-model="form.product_quantity">
+                                                <label for="number_pcantidad">Cantidad Producto</label>
+                                                <input type="text" class="form-control" id="number_pcantidad" placeholder="Entre Cantidad" v-model="form.product_quantity">
                                                 <small class="text-danger" v-if="errors.product_quantity"> {{ errors.product_quantity[0] }} </small>
                                             </div>
                                         </div>
